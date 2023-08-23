@@ -1,4 +1,4 @@
-## **¡Título Importante!**
+## **¡Manual técnico!**
 
 # Tabla de resumen de todas las direcciones IP utilizadas en la práctica:
 
