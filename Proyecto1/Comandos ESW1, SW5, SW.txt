@@ -1,0 +1,102 @@
+ESW1:
+enable
+configure terminal
+vlan 123
+name Administracion
+vlan 223
+name Academico
+vlan 323
+name Investigaciones
+vlan 423
+name Seguridad
+vlan 99
+name Nativa
+vlan 999
+name Blackhole
+
+vtp version 2
+vtp mode server
+vtp domain pareja23
+vtp password usac
+
+interface range e0/0-3
+switchport trunk encapsulate dot1q
+switchport mode trunk
+switchport trunk vlan 99
+
+interface range e1/0-2
+switchport trunk encapsulate dot1q
+switchport mode trunk
+switchport trunk vlan 99
+
+interface e1/3
+switchport mode access
+switchport access vlan 999
+
+spanning-tree mode rapid-pvst
+spanning-tree vlan 1,123,223,323,423,99,999
+spanning-tree vlan 1,123,223,323,423,99,999 root primary
+do write
+
+SW5:
+vtp version 2
+vtp mode client
+vtp domain pareja23
+vtp password usac
+
+interface range e0/0-1
+switchport trunk encapsulate dot1q
+switchport mode trunk
+switchport trunk vlan 99
+
+interface e0/2
+switchport mode access
+switchport access vlan 423
+exit
+
+interface e0/3
+switchport mode access
+switchport access vlan 223
+exit
+
+spanning-tree mode rapid-pvst
+spanning-tree vlan 1,123,223,323,423,99,999
+
+SW:
+vtp version 2
+vtp mode client
+vtp domain pareja23
+vtp password usac
+
+interface range e0/0-1
+switchport trunk encapsulate dot1q
+switchport mode trunk
+switchport trunk vlan 99
+
+interface e0/2
+switchport mode access
+switchport access vlan 123
+exit
+
+interface e0/3
+switchport mode access
+switchport access vlan 423
+exit
+
+interface e1/1
+switchport mode access
+switchport access vlan 323
+exit
+
+interface e1/0
+switchport mode access
+switchport access vlan 223
+exit
+
+interface range e1/2-3
+switchport mode access
+switchport access vlan 999
+exit
+
+spanning-tree mode rapid-pvst
+spanning-tree vlan 1,123,223,323,423,99,999
