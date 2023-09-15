@@ -233,10 +233,10 @@
 
 ## VLAN
 
-![No image](VLAN.png)
+![No image](stp_cap.png)
 
 <br>
 
 ## STP
 
-![No image](STP.png)
+![No image](vlan_cap.png)
