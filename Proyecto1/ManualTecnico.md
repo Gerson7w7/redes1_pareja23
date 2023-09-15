@@ -46,49 +46,49 @@
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>ESW1</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>ESW2</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>SW3</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>SW4</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>SW5</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>SW6</td>
       <td>No aplica</td>
       <td>No aplica</td>
       <td>No aplica</td>
-      <td>VLAN</td>
+      <td>Ninguna en específica</td>
     </tr>
     <tr>
       <td>ADM1</td>
