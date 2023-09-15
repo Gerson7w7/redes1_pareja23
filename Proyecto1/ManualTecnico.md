@@ -227,6 +227,16 @@
 - `switchport access vlan 999`: Asigna la VLAN 999 a las interfaces.
 - `spanning-tree mode rapid-pvst`: Configura el protocolo STP en modo Rapid-PVST.
 - `spanning-tree vlan 1,123,223,323,423,99,999`: Especifica las VLANs en las que se debe ejecutar STP.
+<br>
 
+# Capturas de Wireshark
 
+## VLAN
 
+![No image](VLAN.png)
+
+<br>
+
+## STP
+
+![No image](STP.png)
