@@ -16,30 +16,30 @@
     <tr>
       <td>SEGURIDAD</td>
       <td>172.16.27.2</td>
-      <td>172.16.27.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.27.1</td>
-      <td>VLAN</td>
+      <td>423</td>
     </tr>
     <tr>
       <td>INVEST</td>
       <td>172.16.26.2</td>
       <td>255.255.255.0</td>
       <td>172.16.26.1</td>
-      <td>VLAN</td>
+      <td>323</td>
     </tr>
     <tr>
       <td>ADMINISTRACION</td>
       <td>172.16.24.2</td>
       <td>255.255.255.0</td>
       <td>172.16.24.1</td>
-      <td>VLAN</td>
+      <td>123</td>
     </tr>
     <tr>
       <td>ACADEMICO</td>
       <td>172.16.25.2</td>
       <td>255.255.255.0</td>
       <td>172.16.25.1</td>
-      <td>VLAN</td>
+      <td>223</td>
     </tr>
     <tr>
       <td>SW</td>
@@ -93,58 +93,58 @@
     <tr>
       <td>ADM1</td>
       <td>172.16.24.3</td>
-      <td>172.16.24.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.24.1</td>
-      <td>VLAN</td>
+      <td>123</td>
     </tr>
     <tr>
       <td>SEG1</td>
       <td>172.16.27.3</td>
-      <td>172.16.27.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.27.1</td>
-      <td>VLAN</td>
+      <td>423</td>
     </tr>
     <tr>
       <td>INV1</td>
       <td>172.16.26.3</td>
-      <td>172.16.26.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.26.1</td>
-      <td>VLAN</td>
+      <td>323</td>
     </tr>
     <tr>
       <td>ACA2</td>
       <td>172.16.25.4</td>
-      <td>172.16.25.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.25.1</td>
-      <td>VLAN</td>
+      <td>223</td>
     </tr>
     <tr>
       <td>SEG2</td>
       <td>172.16.27.4</td>
-      <td>172.16.27.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.27.1</td>
-      <td>VLAN</td>
+      <td>423</td>
     </tr>
     <tr>
       <td>ACA1</td>
       <td>172.16.25.3</td>
-      <td>172.16.25.24</td>
+      <td>255.255.255.0</td>
       <td>172.16.25.1</td>
-      <td>VLAN</td>
+      <td>223</td>
     </tr>
     <tr>
       <td>ADM2</td>
       <td>172.16.24.4</td>
       <td>255.255.255.0</td>
       <td>172.16.24.1</td>
-      <td>VLAN</td>
+      <td>123</td>
     </tr>
     <tr>
       <td>INV2</td>
       <td>172.16.26.4</td>
       <td>255.255.255.0</td>
       <td>172.16.26.1</td>
-      <td>VLAN</td>
+      <td>323</td>
     </tr>
   </tbody>
 </table>
