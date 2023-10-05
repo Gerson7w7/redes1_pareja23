@@ -1,0 +1,85 @@
+! ========================= Router Central =============================
+enable 
+configure terminal 
+hostname Central
+interface e0/0
+ip address 123.168.1.2 255.255.255.248
+no shutdown 
+exit
+interface e0/1
+ip address 123.168.2.2 255.255.255.248
+no shutdown 
+exit
+interface s1/0
+ip address 10.0.0.1 255.255.255.252
+no shutdown 
+exit
+ip route 123.168.0.0 255.255.255.0 123.168.1.1
+ip route 123.168.0.0 255.255.255.0 123.168.2.1
+ip route 123.178.0.0 255.255.255.0 123.178.1.2
+ip route 123.178.0.0 255.255.255.0 123.178.2.2
+ip route 123.178.1.0 255.255.255.248 10.0.0.2
+ip route 123.178.2.0 255.255.255.248 10.0.0.2
+
+! ========================= Router R2 =============================
+enable 
+configure terminal 
+hostname R2
+interface e0/0
+ip address 123.168.1.1 255.255.255.248
+no shutdown 
+exit
+interface e0/1
+ip address 123.168.0.2 255.255.255.0
+no shutdown 
+glbp 1 ip 123.168.0.1 ! ip virtual
+glbp 1 priority 150
+glbp 1 preempt
+glbp 1 load-balancing round-robin
+exit
+
+ip route 10.0.0.0 255.255.255.252 123.168.1.2
+ip route 123.168.2.0 255.255.255.248 123.168.0.3
+ip route 123.178.0.0 255.255.255.0 123.178.1.2
+ip route 123.178.0.0 255.255.255.0 123.178.2.2
+ip route 123.178.1.0 255.255.255.248 10.0.0.2
+ip route 123.178.2.0 255.255.255.248 10.0.0.2
+
+! ========================= Router R5 =============================
+enable 
+configure terminal 
+hostname R2
+interface e0/0
+ip address 123.178.1.2 255.255.255.248
+no shutdown 
+exit
+interface e0/1
+ip address 123.168.0.2 255.255.255.0
+no shutdown 
+standby 1 ip 123.178.0.1 ! ip virtual
+standby 1 version 2
+standby 1 priority 150
+standby 1 preempt
+exit
+
+ip route 10.0.0.0 255.255.255.252 123.178.1.1
+ip route 123.168.0.0 255.255.255.0 123.168.1.1
+ip route 123.168.1.0 255.255.255.0 123.168.2.1
+ip route 123.168.1.0 255.255.255.248 10.0.0.1
+ip route 123.168.2.0 255.255.255.248 10.0.0.1
+ip route 123.178.2.0 255.255.255.248 123.178.0.3
+
+! ========================= Switch SW7 =============================
+enable 
+configure terminal 
+hostname SW7
+interface Port-channel 1
+description LACP
+exit
+interface range e0/2-3
+channel-group 1 mode passive
+exit
+
+! ========================= VPC11 =============================
+ip 123.168.0.4/24 123.168.0.1
+save

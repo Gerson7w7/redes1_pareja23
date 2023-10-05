@@ -1,0 +1,20 @@
+! VERIFICIACIÓN GENERAL
+! casi toda la configuración se puede ver con este comando:
+show running-config
+
+! ROUTER
+show ip route ! información sobre rutas estáticas
+
+! HSRP
+show standby
+show standby brief
+
+! GLBP
+show glbp
+show glbp brief
+
+! PORT-CHANNEL (lacp o pagp)
+show ethercahnnel summary 
+show run interface 1 ! interface del port channel
+show interfaces 1 switchport 
+show lacp neighbor ! puede ser: pagp 

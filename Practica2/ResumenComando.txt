@@ -1,0 +1,65 @@
+! ============== PORT CHANNEL LAGP ========================
+! SW7
+interface Port-channel 1
+description LACP
+exit
+interface range e0/2-3
+channel-group 1 mode passive
+exit
+
+! SW8
+interface Port-channel 1
+description LACP
+exit
+interface range e0/0-1
+channel-group 1 mode active
+exit
+
+! ============== PORT CHANNEL PAgP ========================
+! SW9
+interface Port-channel 1
+description PACP
+exit
+interface range e0/2-3
+channel-group 1 mode auto
+exit
+
+! SW10
+interface Port-channel 1
+description LACP
+exit
+interface range e0/0-1
+channel-group 1 mode desirable
+exit
+
+! ============== CREACIÓN RUTA ESTÁTICA ========================
+! se dará ejemplo de 1 router: R5
+! se debe de creart toda la ruta hasta el destino, poniendo los saltos 
+! que sean necesario para llegar al destino: 
+ip route 10.0.0.0 255.255.255.252 123.178.1.1
+ip route 123.168.0.0 255.255.255.0 123.168.1.1
+ip route 123.168.1.0 255.255.255.0 123.168.2.1
+ip route 123.168.1.0 255.255.255.248 10.0.0.1
+ip route 123.168.2.0 255.255.255.248 10.0.0.1
+ip route 123.178.2.0 255.255.255.248 123.178.0.3
+
+! ============== IP VIRTUAL HSRP y GLBP ========================
+! HSRP:
+interface e0/1
+standby 1 ip 123.178.0.1 ! la ip virtual se especifica aquí
+standby 1 version 2
+standby 1 priority 150
+standby 1 preempt
+exit
+
+! GLBP:
+interface e0/1
+glbp 1 ip 123.168.0.1 ! la ip virtual se especifica aquí
+glbp 1 priority 150
+glbp 1 preempt
+glbp 1 load-balancing round-robin
+exit
+
+! ============== CONFIGURACIÓN VPC ========================
+ip 123.168.0.4/24 123.168.0.1 ! como gateway se pone la ip virtual
+save
